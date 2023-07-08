@@ -4,6 +4,30 @@ date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
 ---
 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+	// Just a lil’ script to show off that inline JS gets highlighted
+	window.console && console.log('foo');
+</script>
+<meta charset="utf-8" />
+<link rel="icon" href="assets/favicon.png" />
+<title>Prism</title>
+<link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="themes/prism.css" data-noprefix />
+<script src="assets/vendor/prefixfree.min.js"></script>
+
+<script>var _gaq = [['_setAccount', 'UA-33746269-1'], ['_trackPageview']];</script>
+<script src="https://www.google-analytics.com/ga.js" async></script>
+</head>
+<body>
+```
+
+
 This is my first post on my new fake blog! How exciting!
 
 I'm sure I'll write a lot more interesting things in the future.
