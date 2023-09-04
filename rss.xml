@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 03 Sep 2023 07:00:56 GMT</lastBuildDate><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 04 Sep 2023 09:32:32 GMT</lastBuildDate><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
 right at the coast of the Semantics, a large language ocean. A small river named
@@ -104,7 +104,15 @@ for their projects again and again.&lt;/p&gt;</content:encoded></item><item><tit
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;TBD&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that "despite its name, salted duck eggs can also be made from
+&lt;h2&gt;Why do we use these commands&lt;/h2&gt;
+&lt;p&gt;We have to install SSL certification to JDK to install libraries from local repo using the maven(or maybe gradle). Java has &apos;cacert&apos; and we install SSL certification using openssl and keytool command.&lt;/p&gt;
+&lt;p&gt;The command to get a ssl certification is like this.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;command&quot;&gt;&lt;pre class=&quot;language-command&quot;&gt;&lt;code class=&quot;language-command&quot;&gt;openssl s_client -showcerts -connect [repo URL]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The detail of the openssl is this link.&lt;br&gt;
+&lt;a href=&quot;https://www.tohoho-web.com/ex/openssl.html&quot;&gt;openssl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If we access the repo site using chrome. We can get the SSL certification from the key mark which is left side of the URL.&lt;/p&gt;
+&lt;p&gt;The command to install the certification to the &apos;cacert&apos; is like this.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;command&quot;&gt;&lt;pre class=&quot;language-command&quot;&gt;&lt;code class=&quot;language-command&quot;&gt;keytool -importcert -keystore [the path of the cacert in JDK] -file [the path of the SSL certification] -storepass changeit -alias [alias name]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that "despite its name, salted duck eggs can also be made from
 chicken eggs, though the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
 &lt;p&gt;Did you know that &quot;despite its name, salted duck eggs can also be made from
 chicken eggs, though the taste and texture will be somewhat different, and the
