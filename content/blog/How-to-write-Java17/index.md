@@ -22,4 +22,39 @@ var list = List.of("aaa", "bbb");
 ```
 
 ## Create a list from stream
-TBD
+
+In old version, we have to use 'Collectors.toList()' to generate a list from stream like this.
+
+```Java
+// old version
+List<String> list = someList.stream().collect(Collectors.tolist());
+```
+
+But in Java17, we don't need to use 'Collectors.toList' and we can generate only use 'toList()' like this.
+
+```Java
+// new version
+var list = someList.stream().toList();
+```
+
+## Text block
+In old version, to write sentences using new line, we have to write like this. It is inconvinience compared to other programing languages.
+
+```Java
+// old version
+String s = "blabla \n"
+        + "new line1 \n"
+        + "new line2";
+```
+
+But in Java17, we can write like this. It is called 'Text Block'.
+```Java
+// new version
+String s = 
+    ```
+    blabla
+        new line1 with an indent
+        new line2 with an indent
+    ```
+```
+
