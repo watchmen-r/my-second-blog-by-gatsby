@@ -51,10 +51,10 @@ But in Java17, we can write like this. It is called 'Text Block'.
 ```Java
 // new version
 String s = 
-    ```
+    """
     blabla
         new line1 with an indent
         new line2 with an indent
-    ```
+    """
 ```
 
