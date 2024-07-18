@@ -1,18 +1,45 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, PageProps, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogPostTemplate = ({
-  data: { previous, next, site, markdownRemark: post },
-  location,
-}) => {
-  const siteTitle = site.siteMetadata?.title || `Title`
+interface Frontmatter {
+  title: string
+  date: string
+  description?: string
+}
 
+interface Fields {
+  slug: string
+}
+
+interface MarkdownRemark {
+  html?: string
+  frontmatter: Frontmatter
+  excerpt?: string
+}
+
+interface BlogPostTemplateQueryResult {
+  previous?: {
+    frontmatter: Frontmatter
+    fields: Fields
+  }
+  next?: {
+    frontmatter: Frontmatter
+    fields: Fields
+  }
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+  markdownRemark: MarkdownRemark
+}
+
+const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ data: { previous, next, markdownRemark: post }, location }) => {
   return (
-    <Layout location={location} title={siteTitle}>
+    <>
       <article
         className="blog-post"
         itemScope
@@ -23,7 +50,7 @@ const BlogPostTemplate = ({
           <p>{post.frontmatter.date}</p>
         </header>
         <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{ __html: post.html as string }}
           itemProp="articleBody"
         />
         <hr />
@@ -57,11 +84,15 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
-    </Layout>
+    </>
   )
 }
 
-export const Head = ({ data: { markdownRemark: post } }) => {
+interface HeadQueryResult {
+  markdownRemark: MarkdownRemark
+}
+
+export const Head: React.FC<PageProps<HeadQueryResult>> = ({ data: { markdownRemark: post } }) => {
   return (
     <Seo
       title={post.frontmatter.title}
@@ -73,7 +104,7 @@ export const Head = ({ data: { markdownRemark: post } }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
+query BlogPostBySlug(
     $id: String!
     $previousPostId: String
     $nextPostId: String
