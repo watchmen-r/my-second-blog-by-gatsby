@@ -28,7 +28,6 @@ const Bio = (): JSX.Element => {
 //   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea
         sx={{
@@ -59,7 +58,6 @@ const Bio = (): JSX.Element => {
         </Typography>
       </CardContent>
     </Card>
-    </div>
   )
 }
 

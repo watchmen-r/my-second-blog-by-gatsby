@@ -7,7 +7,7 @@ featuredImage: ./java.jpg
 
 Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the modern writing. So not to confuse, I will write this article.
 
-## Create a list
+# Create a list
 
 In old version, we have to instantiate a list and add value, or generate list from an array.
 This is an example of old writing.
@@ -22,7 +22,7 @@ In Java17, we can create list like this.
 var list = List.of("aaa", "bbb");
 ```
 
-## Create a list from stream
+# Create a list from stream
 
 In old version, we have to use 'Collectors.toList()' to generate a list from stream like this.
 
@@ -38,7 +38,7 @@ But in Java17, we don't need to use 'Collectors.toList' and we can generate only
 var list = someList.stream().toList();
 ```
 
-## Text block
+# Text block
 In old version, to write sentences using new line, we have to write like this. It is inconvinience compared to other programing languages.
 
 ```Java

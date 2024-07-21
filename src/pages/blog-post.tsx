@@ -1,13 +1,12 @@
 import * as React from "react"
 import { Link, PageProps, graphql } from "gatsby"
 
-import Bio from "./pageComponent/bio"
-import Seo from "./pageComponent/seo"
-
-import HeaderBar from "./pageComponent/HeaderBar";
-import FooterBar from "./pageComponent/FooterBar";
 import "./pageComponent/prism.css";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import parse, { domToReact } from "html-react-parser";
+import HeaderBar from "./pageComponent/HeaderBar";
+import FooterBar from "./pageComponent/FooterBar";
+import Seo from "./pageComponent/seo";
 
 interface Frontmatter {
   title: string
@@ -43,6 +42,29 @@ interface BlogPostTemplateQueryResult {
 }
 
 const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ data: { previous, next, markdownRemark: post }, location }) => {
+  const headings: any = []
+  const options = {
+    replace: (domNode: any) => {
+      if (domNode.name === 'h1') {
+        const { children, attribs } = domNode
+        const id = attribs.id || `heading-${headings.length + 1}`
+        headings.push({
+          text: domToReact(children),
+          id,
+        })
+        domNode.attribs.id = id
+        return domNode
+      }
+    }
+  }
+  const parsedHtml = parse(post.html as string, options)
+
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   return (
     <>
       <HeaderBar />
@@ -59,10 +81,11 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ da
             </header>
             <Box
               component="section"
-              dangerouslySetInnerHTML={{ __html: post.html as string }}
               itemProp="articleBody"
               sx={{ mt: 3 }}
-            />
+            >
+              {parsedHtml}
+            </Box>
             <nav className="blog-post-nav">
               <Box
                 component="ul"
@@ -93,7 +116,24 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ da
             </nav>
           </Grid>
           <Grid item xs={12} md={4} mt={10}>
-            <Bio />
+            <Box sx={{ position: 'sticky', top: '80px' }}>
+              <Typography variant="h6" gutterBottom>
+                Table of Contents
+              </Typography>
+              <Box component="ul" sx={{ listStyle: 'none', padding: 0 }}>
+                {headings.map((heading: any, index: number) => (
+                  <Box component="li" key={index} sx={{ mb: 1 }}>
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      onClick={() => handleScroll(heading.id)}
+                    >
+                      {heading.text}
+                    </Button>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Container>
@@ -119,7 +159,7 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
 query BlogPostBySlug(
-    $id: String!
+    $id: String
     $previousPostId: String
     $nextPostId: String
   ) {

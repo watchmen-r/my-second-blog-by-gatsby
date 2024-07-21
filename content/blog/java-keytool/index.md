@@ -7,14 +7,14 @@ featuredImage: ./java.jpg
 
 To install libraries using the maven, perhaps we have to install a client certification in the cacert which is in the Java using keytool command and openssl.
 
-## prerequisite knowledge 
+# prerequisite knowledge 
 
 - openssl
   - This is a open source command line tool that is commonly used to generate private keys. In this case, we use it to get the certification.
 - keytool
   - This is used to install a client certification in cacert, which is located in the Java.
 
-## Why do we use these commands
+# Why do we use these commands
 We have to install SSL certification to JDK to install libraries from local repo using the maven(or maybe gradle). Java has 'cacert' and we install SSL certification using openssl and keytool command.
 
 The command to get a ssl certification is like this.

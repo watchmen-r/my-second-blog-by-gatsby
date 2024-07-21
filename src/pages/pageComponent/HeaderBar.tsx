@@ -18,10 +18,10 @@ const HeaderBar = (): JSX.Element => {
                   variant="h6"
                   sx={{
                     fontWeight: 700,
-                    ml: { xs: 0, sm: 10 }
+                    ml: { xs: 0, sm: 10 },
                   }}
                 >
-                  Oda's blog
+                  <Link href="/" underline="none" sx={{ color: 'white' }}>Oda's blog</Link>
                 </Typography>
               </Grid>
               <Grid item xs={4} sm={3} md={3} container justifyContent="flex-end">

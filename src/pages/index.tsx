@@ -1,12 +1,13 @@
+/* eslint-disable react/prop-types */
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "./pageComponent/bio"
-import Seo from "./pageComponent/seo"
-import HeaderBar from "./pageComponent/HeaderBar"
-import { Card, CardActionArea, CardContent, Container, Grid, Typography } from "@mui/material"
-import FooterBar from "./pageComponent/FooterBar"
+import { Box, Card, CardActionArea, CardContent, Container, Grid, Typography } from "@mui/material"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Bio from "./pageComponent/bio"
+import FooterBar from "./pageComponent/FooterBar"
+import HeaderBar from "./pageComponent/HeaderBar"
+import Seo from "./pageComponent/seo"
 
 const truncateText = (text: string, maxLength: number): string => {
   if (text.length <= maxLength) {
@@ -16,9 +17,8 @@ const truncateText = (text: string, maxLength: number): string => {
 }
 
 const BlogIndex = ({ data }): JSX.Element => {
-  // eslint-disable-next-line react/prop-types
-  const posts = data?.allMarkdownRemark.nodes as Array<any> || [];
-  console.log(data)
+  const posts = data?.allMarkdownRemark.nodes || []
+
   if (posts.length === 0) {
     return (
       <>
@@ -73,7 +73,9 @@ const BlogIndex = ({ data }): JSX.Element => {
             </Grid>
           </Grid>
           <Grid item md={4} mt={10}>
-            <Bio />
+            <Box sx={{ position: 'sticky', top: '80px' }}>
+              <Bio />
+            </Box>
           </Grid>
         </Grid>
       </Container>
@@ -84,12 +86,7 @@ const BlogIndex = ({ data }): JSX.Element => {
 
 export default BlogIndex
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = ():JSX.Element => <Seo title="All posts" />
+export const Head = (): JSX.Element => <Seo title="All posts" />
 
 export const pageQuery = graphql`
   {

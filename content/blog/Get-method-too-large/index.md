@@ -7,14 +7,14 @@ featuredImage: ./server.jpg
 
 I met the 400 Bad request when using GET method with a long query parameter. Not to forget it, note this with other articles.
 
-## The occurrence
+# The occurrence
 When retrieving data from String boot project by another spring boot project. I met the occurrence suddernly. At first I suspect the long URL has long query parameter affects it. Looks like each browser has their own constraints about the lenght of an URL.  
 This is a interesting article about that.
 https://qiita.com/nwtgck/items/e83473dc63386d2da3e5
 
 As for the Spring boot, there is a constraints of HTTP header and the long length of URL related to it.
 
-## Solution
+# Solution
 
 Some articles said when use GET method when retrieving data with long query parameters, we should avoid using GET method and use POST method instead.  
 
