@@ -2,6 +2,7 @@
 title: About keytool, openssl, cacert.
 date: "2015-05-28T22:40:32.169Z"
 description: When using the maven to install libraries, I met some problems to set Java. This solution is very interesting for me so that I note this.
+featuredImage: ./java.jpg
 ---
 
 To install libraries using the maven, perhaps we have to install a client certification in the cacert which is in the Java using keytool command and openssl.

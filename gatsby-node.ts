@@ -4,7 +4,7 @@ import { CreatePagesArgs, CreateNodeArgs } from 'gatsby'
 import { createFilePath } from 'gatsby-source-filesystem'
 
 // Define the template for blog post
-const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+const blogPost = path.resolve(`./src/pages/blog-post.tsx`)
 
 const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }: CreatePagesArgs) => {
   const { createPage } = actions
@@ -17,6 +17,13 @@ const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, report
           id
           fields {
             slug
+          }
+          frontmatter {
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
           }
         }
       }
@@ -103,6 +110,7 @@ const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ ac
       title: String
       description: String
       date: Date @dateformat
+      featuredImage: File @fileByRelativePath
     }
 
     type Fields {

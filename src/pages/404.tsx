@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Seo from "../components/seo"
+import Seo from "./pageComponent/seo"
 
 const NotFoundPage = (): JSX.Element => {
 

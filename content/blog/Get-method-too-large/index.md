@@ -2,6 +2,7 @@
 title: Met header is too large when using GET method with the long parameter.
 date: "2023-11-21T22:40:32.169Z"
 description: Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the modern writing. So not to confuse, I will write this article.
+featuredImage: ./server.jpg
 ---
 
 I met the 400 Bad request when using GET method with a long query parameter. Not to forget it, note this with other articles.
