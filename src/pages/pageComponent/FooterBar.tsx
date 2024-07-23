@@ -7,19 +7,20 @@ const FooterBar = (): JSX.Element  => {
     <Box
       component="footer"
       sx={{
+        height: 13,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 2,
-        backgroundColor: 'white',
-        color: 'black',
-        position: 'fixed',
+        backgroundColor: '#759a97',
+        color: 'white',
         bottom: 0,
         width: '100%',
+        position: 'fixed'
       }}
     >
       <Typography variant="body1">
-        © {new Date().getFullYear()} createdby oda
+        © {new Date().getFullYear()} created by oda
       </Typography>
     </Box>
   );

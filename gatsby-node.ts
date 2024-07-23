@@ -3,8 +3,9 @@ import path from 'path'
 import { CreatePagesArgs, CreateNodeArgs } from 'gatsby'
 import { createFilePath } from 'gatsby-source-filesystem'
 
-// Define the template for blog post
+// Define the template for blog post and blog list
 const blogPost = path.resolve(`./src/pages/blog-post.tsx`)
+const blogListTemplate = path.resolve(`./src/templates/blog-list-template.tsx`)
 
 const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }: CreatePagesArgs) => {
   const { createPage } = actions
@@ -56,6 +57,23 @@ const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, report
           id: post.id,
           previousPostId,
           nextPostId,
+        },
+      })
+    })
+
+    // Create paginated blog list pages
+    const postsPerPage = 6
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/` : `/page/${i + 1}`,
+        component: blogListTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
         },
       })
     })

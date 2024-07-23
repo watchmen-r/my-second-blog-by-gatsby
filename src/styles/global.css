@@ -1,0 +1,10 @@
+body {
+  background-image: url('../images/white-cardboard.png');
+  background-size: auto; /* or adjust as needed */
+  background-position: top left;
+  background-repeat: repeat;
+}
+
+.anchor-heading {
+  scroll-margin-top: 80px; /* Adjust based on your header height */
+}

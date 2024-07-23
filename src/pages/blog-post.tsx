@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, PageProps, graphql } from "gatsby"
 
 import "./pageComponent/prism.css";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
 import parse, { domToReact } from "html-react-parser";
 import HeaderBar from "./pageComponent/HeaderBar";
 import FooterBar from "./pageComponent/FooterBar";
@@ -53,6 +53,7 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ da
           id,
         })
         domNode.attribs.id = id
+        domNode.attribs.class = `${domNode.attribs.class || ''} anchor-heading`.trim();
         return domNode
       }
     }
@@ -68,72 +69,81 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ da
   return (
     <>
       <HeaderBar />
-      <Container maxWidth="lg" sx={{ pb: 10 }}>
+      <Container maxWidth="lg" sx={{ pb: 8 }}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={8} mt={10}>
-            <header>
-              <Typography variant="h3" component="h1" gutterBottom>
-                {post.frontmatter.title}
-              </Typography>
-              <Typography variant="subtitle1" color="textSecondary">
-                {post.frontmatter.date}
-              </Typography>
-            </header>
-            <Box
-              component="section"
-              itemProp="articleBody"
-              sx={{ mt: 3 }}
-            >
-              {parsedHtml}
-            </Box>
-            <nav className="blog-post-nav">
+          <Grid item xs={12} md={8} mt={7}>
+            <Card sx={{padding: 3}}>
+              <header>
+                <Typography variant="h3" component="h1" gutterBottom>
+                  {post.frontmatter.title}
+                </Typography>
+                <Typography variant="subtitle1" color="textSecondary">
+                  {post.frontmatter.date}
+                </Typography>
+              </header>
               <Box
-                component="ul"
-                sx={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'space-between',
-                  listStyle: 'none',
-                  padding: 0,
-                  mt: 3,
-                }}
+                component="section"
+                itemProp="articleBody"
+                sx={{ mt: 3 }}
               >
-                <Box component="li">
-                  {previous && (
-                    <Button component={Link} to={previous.fields.slug} rel="prev">
-                      ← {previous.frontmatter.title}
-                    </Button>
-                  )}
-                </Box>
-                <Box component="li">
-                  {next && (
-                    <Button component={Link} to={next.fields.slug} rel="next">
-                      {next.frontmatter.title} →
-                    </Button>
-                  )}
-                </Box>
+                {parsedHtml}
               </Box>
-            </nav>
-          </Grid>
-          <Grid item xs={12} md={4} mt={10}>
-            <Box sx={{ position: 'sticky', top: '80px' }}>
-              <Typography variant="h6" gutterBottom>
-                Table of Contents
-              </Typography>
-              <Box component="ul" sx={{ listStyle: 'none', padding: 0 }}>
-                {headings.map((heading: any, index: number) => (
-                  <Box component="li" key={index} sx={{ mb: 1 }}>
-                    <Button
-                      size="small"
-                      variant="outlined"
-                      onClick={() => handleScroll(heading.id)}
-                    >
-                      {heading.text}
-                    </Button>
+              <nav className="blog-post-nav">
+                <Box
+                  component="ul"
+                  sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    listStyle: 'none',
+                    padding: 0,
+                    mt: 3,
+                  }}
+                >
+                  <Box component="li">
+                    {previous && (
+                      <Button component={Link} to={previous.fields.slug} rel="prev">
+                        ← {previous.frontmatter.title}
+                      </Button>
+                    )}
                   </Box>
-                ))}
+                  <Box component="li">
+                    {next && (
+                      <Button component={Link} to={next.fields.slug} rel="next">
+                        {next.frontmatter.title} →
+                      </Button>
+                    )}
+                  </Box>
+                </Box>
+              </nav>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4} mt={7}>
+            <Card sx={{ position: 'sticky', top: '80px', padding: 2 }}>
+              <Box>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ textAlign: 'center' }}
+                >
+                  Table of Contents
+                </Typography>
+                <Box component="ul" sx={{ listStyle: 'none', padding: 0 }}>
+                  {headings.map((heading: any, index: number) => (
+                    <Box component="li" key={index} sx={{ mb: 1 }}>
+                      <Button
+                        size="small"
+                        variant="outlined"
+                        onClick={() => handleScroll(heading.id)}
+                        sx={{ marginLeft: 1 }}
+                      >
+                        {heading.text}
+                      </Button>
+                    </Box>
+                  ))}
+                </Box>
               </Box>
-            </Box>
+            </Card>
           </Grid>
         </Grid>
       </Container>

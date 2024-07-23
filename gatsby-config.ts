@@ -13,9 +13,14 @@ module.exports = {
     title: `Oda's web memo`,
     author: {
       name: `oda`,
-      summary: `who lives in Tokyo.`,
+      summary: `Software Engineer with over 8 years of experience in web development, specializing in creating dynamic and responsive web applications. ` +
+      `Passionate about technology and continuously learning new skills to improve my craft.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    social: {
+      linkedin: "https://www.linkedin.com/in/hisanobu-oda/",
+      github: "https://github.com/watchmen-r"
+    },
+    description: `my second tech blog`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
   },
   plugins: [

@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Container, Grid, Link } from '@mui/material';
+import { withPrefix } from 'gatsby';
 
 const HeaderBar = (): JSX.Element => {
   return (
@@ -21,7 +22,7 @@ const HeaderBar = (): JSX.Element => {
                     ml: { xs: 0, sm: 10 },
                   }}
                 >
-                  <Link href="/" underline="none" sx={{ color: 'white' }}>Oda's blog</Link>
+                  <Link href={withPrefix('/')} underline="none" sx={{ color: 'white' }}>Oda's blog</Link>
                 </Typography>
               </Grid>
               <Grid item xs={4} sm={3} md={3} container justifyContent="flex-end">
