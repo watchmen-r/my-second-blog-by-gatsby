@@ -38,7 +38,18 @@ const BlogList = ({ data, pageContext }) => {
                 const image = getImage(post.frontmatter.featuredImage);
                 return (
                   <Grid item xs={12} sm={6} key={post.fields.slug}>
-                    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <Card
+                      sx={{
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        transition: 'transform 0.3s, box-shadow 0.3s',
+                        '&:hover': {
+                          transform: 'translateY(-10px)', // Move the card 10px upwards
+                          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                        },
+                      }}
+                    >
                       <CardActionArea component={Link} to={post.fields.slug}>
                         {image && (
                           <GatsbyImage image={image} alt={post.frontmatter.title} style={{ maxHeight: 200 }} />

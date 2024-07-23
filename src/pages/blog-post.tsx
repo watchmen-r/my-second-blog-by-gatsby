@@ -119,15 +119,17 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ da
             </Card>
           </Grid>
           <Grid item xs={12} md={4} mt={7}>
-            <Card sx={{ position: 'sticky', top: '80px', padding: 2 }}>
+            <Card sx={{ position: 'sticky', top: '80px',}}>
               <Box>
-                <Typography
-                  variant="h6"
-                  gutterBottom
-                  sx={{ textAlign: 'center' }}
-                >
-                  Table of Contents
-                </Typography>
+                <Box sx={{backgroundColor: '#6988A9', color: 'white', padding: '3px',}}>
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    sx={{ textAlign: 'center', mt: '5px' }}
+                  >
+                    Table of Contents
+                  </Typography>
+                </Box>
                 <Box component="ul" sx={{ listStyle: 'none', padding: 0 }}>
                   {headings.map((heading: any, index: number) => (
                     <Box component="li" key={index} sx={{ mb: 1 }}>

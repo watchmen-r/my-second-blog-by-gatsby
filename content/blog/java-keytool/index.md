@@ -1,6 +1,6 @@
 ---
 title: About keytool, openssl, cacert.
-date: "2015-05-28T22:40:32.169Z"
+date: "2023-11-20T22:40:32.169Z"
 description: When using the maven to install libraries, I met some problems to set Java. This solution is very interesting for me so that I note this.
 featuredImage: ./java.jpg
 ---
