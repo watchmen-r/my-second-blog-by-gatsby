@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[my second tech blog]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 23 Jul 2024 05:51:58 GMT</lastBuildDate><item><title><![CDATA[How to write Java 17.]]></title><description><![CDATA[Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/How-to-write-Java17/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/How-to-write-Java17/</guid><pubDate>Wed, 22 Nov 2023 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the modern writing. So not to confuse, I will write this article.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[my second tech blog]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 23 Jul 2024 08:04:32 GMT</lastBuildDate><item><title><![CDATA[How to write Java 17.]]></title><description><![CDATA[Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/How-to-write-Java17/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/How-to-write-Java17/</guid><pubDate>Wed, 22 Nov 2023 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the modern writing. So not to confuse, I will write this article.&lt;/p&gt;
 &lt;h1&gt;Create a list&lt;/h1&gt;
 &lt;p&gt;In old version, we have to instantiate a list and add value, or generate list from an array.
 This is an example of old writing.&lt;/p&gt;
@@ -41,7 +41,29 @@ This is a interesting article about that.
 server.max-http-header-size=65536&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;These ones are useful articles.
 &lt;a href=&quot;https://thewebspark.com/2017/12/06/tomcat-request-header-too-large-resolved/&quot;&gt;https://thewebspark.com/2017/12/06/tomcat-request-header-too-large-resolved/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.baeldung.com/spring-boot-max-http-header-size&quot;&gt;https://www.baeldung.com/spring-boot-max-http-header-size&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
+&lt;p&gt;&lt;a href=&quot;https://www.baeldung.com/spring-boot-max-http-header-size&quot;&gt;https://www.baeldung.com/spring-boot-max-http-header-size&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[About keytool, openssl, cacert.]]></title><description><![CDATA[To install libraries using the maven, perhaps we have to install a client certification in the cacert which is in the Java using keytool…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/java-keytool/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/java-keytool/</guid><pubDate>Mon, 20 Nov 2023 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;To install libraries using the maven, perhaps we have to install a client certification in the cacert which is in the Java using keytool command and openssl.&lt;/p&gt;
+&lt;h1&gt;prerequisite knowledge&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;openssl
+&lt;ul&gt;
+&lt;li&gt;This is a open source command line tool that is commonly used to generate private keys. In this case, we use it to get the certification.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;keytool
+&lt;ul&gt;
+&lt;li&gt;This is used to install a client certification in cacert, which is located in the Java.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Why do we use these commands&lt;/h1&gt;
+&lt;p&gt;We have to install SSL certification to JDK to install libraries from local repo using the maven(or maybe gradle). Java has &apos;cacert&apos; and we install SSL certification using openssl and keytool command.&lt;/p&gt;
+&lt;p&gt;The command to get a ssl certification is like this.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;command&quot;&gt;&lt;pre class=&quot;language-command&quot;&gt;&lt;code class=&quot;language-command&quot;&gt;openssl s_client -showcerts -connect [repo URL]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The detail of the openssl is this link.&lt;br&gt;
+&lt;a href=&quot;https://www.tohoho-web.com/ex/openssl.html&quot;&gt;openssl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If we access the repo site using chrome. We can get the SSL certification from the key mark which is left side of the URL.&lt;/p&gt;
+&lt;p&gt;The command to install the certification to the &apos;cacert&apos; is like this.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;command&quot;&gt;&lt;pre class=&quot;language-command&quot;&gt;&lt;code class=&quot;language-command&quot;&gt;keytool -importcert -keystore [the path of the cacert in JDK] -file [the path of the SSL certification] -storepass changeit -alias [alias name]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
 right at the coast of the Semantics, a large language ocean. A small river named
@@ -133,29 +155,7 @@ would be the word &quot;and&quot; and the Little Blind Text should turn around a
 to its own, safe country. But nothing the copy said could convince her and so it
 didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
 with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[About keytool, openssl, cacert.]]></title><description><![CDATA[To install libraries using the maven, perhaps we have to install a client certification in the cacert which is in the Java using keytool…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/java-keytool/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/java-keytool/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;To install libraries using the maven, perhaps we have to install a client certification in the cacert which is in the Java using keytool command and openssl.&lt;/p&gt;
-&lt;h1&gt;prerequisite knowledge&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;openssl
-&lt;ul&gt;
-&lt;li&gt;This is a open source command line tool that is commonly used to generate private keys. In this case, we use it to get the certification.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;keytool
-&lt;ul&gt;
-&lt;li&gt;This is used to install a client certification in cacert, which is located in the Java.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Why do we use these commands&lt;/h1&gt;
-&lt;p&gt;We have to install SSL certification to JDK to install libraries from local repo using the maven(or maybe gradle). Java has &apos;cacert&apos; and we install SSL certification using openssl and keytool command.&lt;/p&gt;
-&lt;p&gt;The command to get a ssl certification is like this.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;command&quot;&gt;&lt;pre class=&quot;language-command&quot;&gt;&lt;code class=&quot;language-command&quot;&gt;openssl s_client -showcerts -connect [repo URL]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The detail of the openssl is this link.&lt;br&gt;
-&lt;a href=&quot;https://www.tohoho-web.com/ex/openssl.html&quot;&gt;openssl&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;If we access the repo site using chrome. We can get the SSL certification from the key mark which is left side of the URL.&lt;/p&gt;
-&lt;p&gt;The command to install the certification to the &apos;cacert&apos; is like this.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;command&quot;&gt;&lt;pre class=&quot;language-command&quot;&gt;&lt;code class=&quot;language-command&quot;&gt;keytool -importcert -keystore [the path of the cacert in JDK] -file [the path of the SSL certification] -storepass changeit -alias [alias name]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that "despite its name, salted duck eggs can also be made from
+for their projects again and again.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that "despite its name, salted duck eggs can also be made from
 chicken eggs, though the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
 &lt;p&gt;Did you know that &quot;despite its name, salted duck eggs can also be made from
 chicken eggs, though the taste and texture will be somewhat different, and the
