@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_blog=self.webpackChunkgatsby_starter_blog||[]).push([[422],{3510:function(e,t,a){a.r(t);var o=a(7294),n=a(3906),r=a(2658);t.default=()=>o.createElement(n.Z,{component:"footer",sx:{height:13,display:"flex",justifyContent:"center",alignItems:"center",padding:2,backgroundColor:"#759a97",color:"white",bottom:0,width:"100%",position:"fixed"}},o.createElement(r.Z,{variant:"body1"},"© ",(new Date).getFullYear()," created by oda"))}}]);
+//# sourceMappingURL=component---src-pages-page-component-footer-bar-tsx-8a5f9efc89d61c03fc90.js.map
