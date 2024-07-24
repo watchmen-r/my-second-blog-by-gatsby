@@ -7,6 +7,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Bio from '../pages/pageComponent/bio';
 import FooterBar from '../pages/pageComponent/FooterBar';
 import HeaderBar from '../pages/pageComponent/HeaderBar';
+import SubHeader from '../pages/pageComponent/SubHeader';
 import Seo from '../pages/pageComponent/seo';
 
 const truncateText = (text: string, maxLength: number): string => {
@@ -28,9 +29,10 @@ const BlogList = ({ data, pageContext }) => {
   return (
     <>
       <HeaderBar />
+      <SubHeader />
       <Container maxWidth="lg" sx={{ pb: 10 }}>
         <Grid container spacing={3}>
-          <Grid item md={8} mt={7}>
+          <Grid item md={8} mt={3}>
             <Grid container spacing={3}>
               {posts.map((post: any) => {
                 const title = truncateText(post.frontmatter.title || post.fields.slug, 30);
@@ -84,7 +86,7 @@ const BlogList = ({ data, pageContext }) => {
               )}
             </Box>
           </Grid>
-          <Grid item md={4} mt={7}>
+          <Grid item md={4} mt={3}>
             <Box sx={{ position: 'sticky', top: '80px' }}>
               <Bio />
             </Box>
