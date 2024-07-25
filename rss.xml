@@ -1,4 +1,166 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[my second tech blog]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Jul 2024 09:00:07 GMT</lastBuildDate><item><title><![CDATA[How to write Java 17.]]></title><description><![CDATA[Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/How-to-write-Java17/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/How-to-write-Java17/</guid><pubDate>Wed, 22 Nov 2023 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the modern writing. So not to confuse, I will write this article.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[my second tech blog]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 25 Jul 2024 08:58:07 GMT</lastBuildDate><item><title><![CDATA[Event loop promise chain book summary]]></title><description><![CDATA[I found a great book to study event loop and promise
+https://zenn.dev/estra/books/js-async-promise-chain-event-loop These knowledge are…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/event-loop/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/event-loop/</guid><pubDate>Thu, 25 Jul 2024 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;I found a great book to study event loop and promise
+&lt;a href=&quot;https://zenn.dev/estra/books/js-async-promise-chain-event-loop&quot;&gt;https://zenn.dev/estra/books/js-async-promise-chain-event-loop&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;These knowledge are imperative in the tech interview, and knowing these spec enhances our productivity. So I want to summarize it.&lt;/p&gt;
+&lt;h1&gt;Asynchronous api&lt;/h1&gt;
+&lt;p&gt;We should understand what the asynchronous apis are at first. As for setTimeout() and console.log are not defined by ECMA script, but defined by environment like a V8 engine.
+For example, comparing Node’s setTimeout() and browser’s setTimeout(), Node’s one is implemented as a copy of browser one, but slightly different according to the node documentation.&lt;/p&gt;
+&lt;h1&gt;Event loop&lt;/h1&gt;
+&lt;p&gt;Event loop is not defined by ECMA script. So this should be implemented by environment like a browser or runtime( node, demo). There would be able to exist multiple task queue. For example, blink, which is a rendering engine in chrome, prioritize to process click event.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/my-second-blog-by-gatsby/static/3e610d48d82163fb0e2001b52449707f/d5bfb/javascript_env.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 70.25316455696203%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAADGUlEQVR42oWS72tbVRjH80pty7Cl0y236UAUBUHBd+J0ssFwL9ZNRPtCX/lW/At8ISLIWB2VOme35YdN27S6ZklTlaEtuiEi6+xqZ5ts6b03P06yNG3Sm2SuTZPc85GbZCwbgg9873meL5fPec45j63HGcXu0ekYVmmvS6Ptqwhtp8PNWqVtWOXxcxoOj06XM8ZjQ3/z6Infaf86yl63To9Hl46xNIpbEzbLeGZc8Nl8jqG/NhlcNBiczzD4h+ALK7++yZklgw8vZ+lyJXj35zXOXLvNqctRBq6t8+Jkkiedq9IxKlA8MWHb7dR41S8wTYkVje/9MGXDWcxu0e3SCarFel1r+u+ENDo+/lEqA1ewD680gRcFFVNSk1CRULVkNtad5kYLTWBgtQEs12R987eDKh0fTUvl8yvYz0aEbbdL4+UpQaVWq/fX+O2+atKsA/5cu0u3J4F/tbVDyZvTOrs+nZUO5y0Ub0LYFI9OjzfJfr/g0JTOwYDgjVCaI6E0BwMpDgVTHA4KXvDe4pGhMM+OqBwOpev+gYuCXm/SAkmHL4MyErceReM5XxLXssFkZJNptcgHv67x/mymfrzRcIGxsMHkjQzB5TTfLa8zFikyHikwHjF4xS94whOXvRNrDWC3U+O1QIqtOyUKGxn4J8+cmmdiJffA5beGbMn6L92m0xWX++4B7z3KTrXK9k4FZJW5RIkT8xuI4g7LG2XCOUvbhHNbzbXhRXLbHAml6Ha3AK0OXw8IClsmv2lVohnJ1cxdnvcleOt7Qd+M4NiMoO9CmKO+Jfou3OTYTIrjM4KjIcFTo0mUEesOW4AHAoI7ZQtYYTVr8kuiyNnFdaQ0yW9XKJSrFMq1pqoY9bpKsVzh+A9putwPHFmV+/1JazikaTZmZS5WkL6VfD2v8dAcPaT+S2nZ6Y6b+yYy9HjjSZv9mzhPT6T55GqeU4sGp5cM3pvN0v9Tli+XDE4uGAxc/2+dXNjkpak0e7xC9n67geJNCZtyPlqye2KljmG11NZU5zmt1HVeq+ft/6M9br2kuPWi4omV7W715r+ipXCpiLl2hgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Event_loop&quot;
+        title=&quot;&quot;
+        src=&quot;/my-second-blog-by-gatsby/static/3e610d48d82163fb0e2001b52449707f/f058b/javascript_env.png&quot;
+        srcset=&quot;/my-second-blog-by-gatsby/static/3e610d48d82163fb0e2001b52449707f/c26ae/javascript_env.png 158w,
+/my-second-blog-by-gatsby/static/3e610d48d82163fb0e2001b52449707f/6bdcf/javascript_env.png 315w,
+/my-second-blog-by-gatsby/static/3e610d48d82163fb0e2001b52449707f/f058b/javascript_env.png 630w,
+/my-second-blog-by-gatsby/static/3e610d48d82163fb0e2001b52449707f/40601/javascript_env.png 945w,
+/my-second-blog-by-gatsby/static/3e610d48d82163fb0e2001b52449707f/d5bfb/javascript_env.png 1072w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;JavaScript is a single thread programming language, and this means, program is executed by single thread and have single call stack.
+If RuntimeAPI like fetch() blocks the process, main process would have to wait until fetch() is finished.
+So to avoid these situations, Javascript engine doesn’t involve to RuntimeAPI such a fetch(), and when the fetch() gets the data, notice to JavaScript engine with data to register the callback function.&lt;/p&gt;
+&lt;h2&gt;Task queue&lt;/h2&gt;
+&lt;p&gt;TBD
+Published by setTimeout and so on&lt;/p&gt;
+&lt;h2&gt;Micro task queue&lt;/h2&gt;
+&lt;p&gt;TBD
+Published by promise. This queue is prioritized to process when one task would be finished(in other words, when call stacks would be empty). Then all micro task queue would be processed.&lt;/p&gt;
+&lt;h1&gt;About V8 (index of 8)&lt;/h1&gt;
+&lt;p&gt;V8 is a javascript engine provided by Google. This engine is implemented by C++. This has basic default Event loop, task queue, and micro task queue.&lt;/p&gt;
+&lt;h1&gt;Promise constructor and execute function (index of 12)&lt;/h1&gt;
+&lt;p&gt;This is interesting chapter.&lt;/p&gt;
+&lt;p&gt;These statements are nearly equal.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const promise1 = Promise.resolve(‘promise履行時の値’);
+const promise2 = new Promise(res =&gt; res(‘promise履行時の値’);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Issued micro task even if callback isn’t executed(index of 22)&lt;/h1&gt;
+&lt;p&gt;Even if catch and then wouldn’t be executed because above promise is resolved or rejected, these microtask is published.&lt;/p&gt;
+&lt;h1&gt;Interesting(difficult) event loop question at index24&lt;/h1&gt;
+&lt;p&gt;Just a memo&lt;/p&gt;
+&lt;h1&gt;The interesting spec of async and await at index26&lt;/h1&gt;
+&lt;p&gt;async function is executed synchronously if there wouldn’t be await statement. This mean async would be ruin if it wouldn’t have await in his process. This effect is written in MDN doc.
+As for promise, microtask queue is issued when then method is called. It’s same for await. When calls await, microtask queue is issued (Of course the spec in detail is different, but behavior is like that.)&lt;/p&gt;
+&lt;h3&gt;Caution&lt;/h3&gt;
+&lt;p&gt;In fact, await doesn’t block the all process.(this is confusion point because of meaning word).as I mentioned above, we can rewrite it using promise chain. Await’s really meaning is “continue another process in main thread!”&lt;/p&gt;
+&lt;h1&gt;Promise status (index ?)&lt;/h1&gt;
+&lt;p&gt;Knowing the promise status&lt;/p&gt;
+&lt;h1&gt;Convert from async/await statement to promise chain&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://zenn.dev/estra/books/js-async-promise-chain-event-loop/viewer/14-epasync-chain-to-async-await&quot;&gt;https://zenn.dev/estra/books/js-async-promise-chain-event-loop/viewer/14-epasync-chain-to-async-await&lt;/a&gt;
+As for promise is executed as an asynchronous process when using then method. It is same to async. Async would be asynchronous process when await is used. If there is no await in async, this process is executed same to promise which doesn’t have any then method.
+In async function, the execution flows are divided by await statement. Look at this code as below.&lt;br&gt;
+Copied from the above page.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(async () =&gt; {
+  // 分割された実行フロー(0): 同期  → 最初の await までは同期的に処理される
+  // &amp;lt;-------------------&gt;
+  await 1;
+  // 分割された実行フロー(1): 非同期 → イベントループでマイクロタスクとして処理される
+  // &amp;lt;-------------------&gt;
+  await 2;
+  // 分割された実行フロー(2): 非同期 → イベントループでマイクロタスクとして処理される
+  // &amp;lt;-------------------&gt;
+  await 3;
+  // 分割された実行フロー(3): 非同期 → イベントループでマイクロタスクとして処理される
+})();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can consider then method is used when await is executed.&lt;br&gt;
+(Copied from the above page.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.log(&quot;🦖 [1] sync&quot;);
+
+(async () =&gt; {
+  console.log(&quot;🦄 [2] sync&quot;);
+  // ここまでは同期処理!!
+
+  // await のたびに then しているのと同じ
+  await Promise.resolve(1);
+  console.log(&quot;👻 [4] async&quot;);
+  await Promise.resolve(2);
+  console.log(&quot;👻 [5] async&quot;);
+})();
+
+console.log(&quot;🦖 [3] sync&quot;);
+
+/* 出力結果
+🦖 [1] sync
+🦄 [2] sync
+🦖 [3] sync
+👻 [4] async
+👻 [5] async
+*/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The above code can be written like this.
+(Copied from the above page.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.log(&quot;🦖 [1] sync&quot;);
+
+(async () =&gt; {
+  console.log(&quot;🦄 [2] sync&quot;);
+
+  Promise.resolve(1)
+    .then(() =&gt; { // 非同期
+      console.log(&quot;👻 [4] async&quot;);
+      return Promise.resolve(2);
+    })
+    .then(() =&gt; { // 非同期
+      console.log(&quot;👻 [5] async&quot;);
+    });
+})();
+
+console.log(&quot;🦖 [3] sync&quot;);
+
+/* 出力結果
+🦖 [1] sync
+🦄 [2] sync
+🦖 [3] sync
+👻 [4] async
+👻 [5] async
+*/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Iterate Promise using reduce to run sequentially, avoid using for loop.&lt;/h1&gt;
+&lt;p&gt;When we want to implement process of asynchronous sequentially, easy to use for loop. But in that case, advised by lint with airbnb that you have to avoid using for loop.
+To avoid this lint error, we can use reduce.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(async () =&gt; {
+  for (let i = 0; i &amp;lt; urls.length; i++) {
+    await fetchThenConsole(urls[i]);
+    // fetchThenConsole() は async 関数
+    console.log(`${i + 1}個目のフェッチが完了しました`);
+  }
+  console.log(&quot;すべての非同期処理が完了しました&quot;);
+})();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Using reduce&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(async () =&gt; {
+  console.log(&quot;１秒ごとにアルファベットの出力を開始します&quot;);
+
+  const pChain = chars.reduce((promise, item) =&gt; {
+    return promise.then(() =&gt; {
+        console.log(item);
+        return sleep(100); // 副作用にならないように return する sleep はasync 関数
+      });
+    }, sleep(1000));
+  await pChain;
+
+  console.log(&quot;すべてのアルファベットを出力しました&quot;);
+})();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let’s look at above process in detail. At first we define ‘’Promise.resolve()’ as an argument, this means initial value is Promise.resolve().
+Promise.resolve returns promise instance, so the reduce process get promise instance from promise arguments(first line), and run asynchronous function sequentially in then method.
+I think using for loop is readable, but I should understand how to avoid advice from lint with airbnb.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to write Java 17.]]></title><description><![CDATA[Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/How-to-write-Java17/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/How-to-write-Java17/</guid><pubDate>Wed, 22 Nov 2023 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Unfortunately, there is a few valuable info for new Java in Japanese. So sometimes I confused how to write the Java considering what is the modern writing. So not to confuse, I will write this article.&lt;/p&gt;
 &lt;h1&gt;Create a list&lt;/h1&gt;
 &lt;p&gt;In old version, we have to instantiate a list and add value, or generate list from an array.
 This is an example of old writing.&lt;/p&gt;
@@ -161,7 +323,7 @@ chicken eggs, though the…]]></description><link>https://gatsbystarterblogsourc
 chicken eggs, though the taste and texture will be somewhat different, and the
 egg yolk will be less rich.&quot;?
 (&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Yeah, I didn&apos;t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/pagination-test4/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/pagination-test4/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;p&gt;Yeah, I didn&apos;t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/pagination-test4 copy/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/pagination-test4 copy/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;en&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 
@@ -398,7 +560,7 @@ __double underscores__&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This paragraph has some &lt;code class=&quot;language-text&quot;&gt;code&lt;/code&gt; in it.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This paragraph has some `code` in it.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/200x50&quot; alt=&quot;Alt Text&quot; title=&quot;Image Title&quot;&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://via.placeholder.com/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/pagination-test4 copy/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/pagination-test4 copy/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://via.placeholder.com/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/pagination-test4/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/pagination-test4/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;en&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 
@@ -1109,7 +1271,7 @@ __double underscores__&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This paragraph has some &lt;code class=&quot;language-text&quot;&gt;code&lt;/code&gt; in it.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This paragraph has some `code` in it.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/200x50&quot; alt=&quot;Alt Text&quot; title=&quot;Image Title&quot;&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://via.placeholder.com/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://via.placeholder.com/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/pagination-test1/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/pagination-test1/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;en&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 
@@ -1346,7 +1508,7 @@ __double underscores__&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This paragraph has some &lt;code class=&quot;language-text&quot;&gt;code&lt;/code&gt; in it.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This paragraph has some `code` in it.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/200x50&quot; alt=&quot;Alt Text&quot; title=&quot;Image Title&quot;&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://via.placeholder.com/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/pagination-test1/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/pagination-test1/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://via.placeholder.com/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;en&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 
