@@ -86,7 +86,7 @@ const BlogList = ({ data, pageContext }) => {
               )}
             </Box>
           </Grid>
-          <Grid item md={4} mt={3}>
+          <Grid item md={4} mt={3} sx={{ display: { xs: 'none', md: 'block' }}}>
             <Box sx={{ position: 'sticky', top: '80px' }}>
               <Bio />
             </Box>

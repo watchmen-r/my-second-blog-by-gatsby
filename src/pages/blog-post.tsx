@@ -2,11 +2,13 @@ import * as React from "react"
 import { Link, PageProps, graphql } from "gatsby"
 
 import "./pageComponent/prism.css";
-import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Card, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import parse, { domToReact } from "html-react-parser";
 import HeaderBar from "./pageComponent/HeaderBar";
 import FooterBar from "./pageComponent/FooterBar";
 import Seo from "./pageComponent/seo";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 interface Frontmatter {
   title: string
@@ -41,7 +43,15 @@ interface BlogPostTemplateQueryResult {
   markdownRemark: MarkdownRemark
 }
 
+const truncateText = (text: string, maxLength: number): string => {
+  if (text.length <= maxLength) {
+    return text;
+  }
+  return text.substring(0, maxLength) + '...';
+};
+
 const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ data: { previous, next, markdownRemark: post }, location }) => {
+  const isSmallScreen = useMediaQuery((theme: any) => theme.breakpoints.down('sm'));
   const headings: any = []
   const options = {
     replace: (domNode: any) => {
@@ -97,20 +107,48 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ da
                     justifyContent: 'space-between',
                     listStyle: 'none',
                     padding: 0,
-                    mt: 3,
+                    mt: 5,
                   }}
                 >
                   <Box component="li">
                     {previous && (
-                      <Button component={Link} to={previous.fields.slug} rel="prev">
-                        ← {previous.frontmatter.title}
+                      <Button 
+                        component={Link} 
+                        to={previous.fields.slug} 
+                        rel="prev" 
+                        startIcon={<ArrowBackIcon />}
+                        sx={{
+                          padding: '8px 16px',
+                          border: '1px solid',
+                          borderRadius: '8px',
+                          textTransform: 'none',
+                          '&:hover': {
+                            backgroundColor: '#f5f5f5',
+                          },
+                        }}
+                      >
+                        {isSmallScreen ? 'prev page' : truncateText(previous.frontmatter.title, 25)}
                       </Button>
                     )}
                   </Box>
                   <Box component="li">
                     {next && (
-                      <Button component={Link} to={next.fields.slug} rel="next">
-                        {next.frontmatter.title} →
+                      <Button 
+                        component={Link} 
+                        to={next.fields.slug} 
+                        rel="next" 
+                        endIcon={<ArrowForwardIcon />}
+                        sx={{
+                          padding: '8px 16px',
+                          border: '1px solid',
+                          borderRadius: '8px',
+                          textTransform: 'none',
+                          '&:hover': {
+                            backgroundColor: '#f5f5f5',
+                          },
+                        }}
+                      >
+                        {isSmallScreen ? 'next page' : truncateText(next.frontmatter.title, 25)}
                       </Button>
                     )}
                   </Box>
@@ -118,7 +156,7 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ da
               </nav>
             </Card>
           </Grid>
-          <Grid item xs={12} md={4} mt={7}>
+          <Grid item xs={12} md={4} mt={7} sx={{ display: { xs: 'none', md: 'block' }}}>
             <Card sx={{ position: 'sticky', top: '80px',}}>
               <Box>
                 <Box sx={{backgroundColor: '#6988A9', color: 'white', padding: '3px',}}>
@@ -137,9 +175,9 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateQueryResult>> = ({ da
                         size="small"
                         variant="outlined"
                         onClick={() => handleScroll(heading.id)}
-                        sx={{ marginLeft: 1 }}
+                        sx={{ marginLeft: 1, textTransform: 'none' }}
                       >
-                        {heading.text}
+                        {`${index + 1}. `}{ truncateText(heading.text, 45) }
                       </Button>
                     </Box>
                   ))}
