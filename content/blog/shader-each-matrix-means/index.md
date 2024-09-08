@@ -1,5 +1,5 @@
 ---
-title: Each matrix means in vertex shader.
+title: What each matrix means in vertex shader.
 date: "2024-09-08T17:26:32.169Z"
 description: Recently, I started learning three.js and am currently studying shaders. There are two types of shaders, vertex shaders and fragment shaders. In the vertex shader, there are three matrices used for calculations, but it's difficult to understand what each matrix represents. I want to summarize them.
 featuredImage: ./3d_logo2.png
