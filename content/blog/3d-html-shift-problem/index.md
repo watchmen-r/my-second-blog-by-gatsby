@@ -120,3 +120,5 @@ const SkillsIframe: React.FC<SkillsIframeProps> = ({isZoomed}) => {
 
 export default SkillsIframe;
 ```
+
+![Alt Text](./fixed-img.png "fixed image")
