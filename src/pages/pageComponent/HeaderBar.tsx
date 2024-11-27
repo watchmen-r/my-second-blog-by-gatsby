@@ -27,7 +27,7 @@ const HeaderBar = (): JSX.Element => {
               </Grid>
               <Grid item xs={4} sm={3} md={3} container justifyContent="flex-end">
                 <Button color="inherit" sx={{ mr: {sm: 30}}}>
-                  <Link href="/about" underline="none">
+                  <Link href="https://portfolio-town-tau.vercel.app/" underline="none" target="_blank">
                     <Typography sx={{ color: 'white' }}>
                       About
                     </Typography>

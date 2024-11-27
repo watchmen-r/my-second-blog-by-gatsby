@@ -1,7 +1,7 @@
 ---
 title: Found a problem of shift the iframe or img tag in html component of drei.
 date: "2024-10-21T21:26:32.169Z"
-description: Recently, I started learning three.js and am currently studying shaders. There are two types of shaders, vertex shaders and fragment shaders. In the vertex shader, there are three matrices used for calculations, but it's difficult to understand what each matrix represents. I want to summarize them.
+description: Recently, I developed 3d portfolio to study 3D. But recently I realized the img or iframe I embed was shifted in the specific situation. I want to write notes to handle this problem if I would meet same situation.
 featuredImage: ./3d_logo2.png
 ---
 
