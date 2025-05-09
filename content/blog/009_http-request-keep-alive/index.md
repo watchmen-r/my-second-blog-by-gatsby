@@ -1,6 +1,6 @@
 ---
 title: About keep-alive
-date: "2025-5-6T21:26:32.169Z"
+date: "2025-05-06T21:26:32.169Z"
 description: I just found an issue with HTTP requests when a request takes a long time, it gets interrupted even though I set a timeout in the HTTP client library (like Axios). I want to document the solution and explain what ‘keep-alive’ is.
 featuredImage: ./laptop.png
 ---
