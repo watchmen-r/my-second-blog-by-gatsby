@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[my second tech blog]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 09 May 2025 05:06:56 GMT</lastBuildDate><item><title><![CDATA[About keep-alive]]></title><description><![CDATA[Recently, I was confused about http request which took for a long time. Even though the target backend output log which means returned a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/009_http-request-keep-alive/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/009_http-request-keep-alive/</guid><pubDate>Tue, 06 May 2025 21:26:32 GMT</pubDate><content:encoded>&lt;p&gt;Recently, I was confused about http request which took for a long time. Even though the target backend output log which means returned a response, client could not receive it.&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[my second tech blog]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 24 May 2025 07:04:19 GMT</lastBuildDate><item><title><![CDATA[The guideline of evaluation points]]></title><description><![CDATA[Memo on Evaluation Points I read this book during Golden Week, and it was incredibly educational in helping me understand managerial work…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/010_guideline_of_evaluation-points/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/010_guideline_of_evaluation-points/</guid><pubDate>Sat, 24 May 2025 21:26:32 GMT</pubDate><content:encoded>&lt;h1&gt;Memo on Evaluation Points&lt;/h1&gt;
+&lt;p&gt;I read this book during Golden Week, and it was incredibly educational in helping me understand managerial work.&lt;br&gt;
+&lt;a href=&quot;https://d21.co.jp/book/detail/978-4-7993-2995-5&quot;&gt;マネジャーの全仕事&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It includes a section on how to evaluate team members, and one part in particular (p. 266) gave me valuable insight. Here are the key evaluation points mentioned:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Workload or level of work&lt;/li&gt;
+&lt;li&gt;Work quality&lt;/li&gt;
+&lt;li&gt;Accuracy&lt;/li&gt;
+&lt;li&gt;Proactiveness and initiative&lt;/li&gt;
+&lt;li&gt;Attitude&lt;/li&gt;
+&lt;li&gt;Learning ability&lt;/li&gt;
+&lt;li&gt;Ability to be a team player&lt;/li&gt;
+&lt;li&gt;Attendance&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The book explains that these points are helpful when filling out evaluation sheets. However, I believe being mindful of them in our day-to-day work can also improve the quality of our output and strengthen collaboration with our coworkers.&lt;/p&gt;
+&lt;h2&gt;How to Apply These Points&lt;/h2&gt;
+&lt;p&gt;We should pay attention to these aspects in our daily work. While they may seem like common sense, it’s not always easy for everyone to consistently follow them. By keeping these points in mind, we can continue growing as professionals and as a team.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[About keep-alive]]></title><description><![CDATA[Recently, I was confused about http request which took for a long time. Even though the target backend output log which means returned a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/009_http-request-keep-alive/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/009_http-request-keep-alive/</guid><pubDate>Tue, 06 May 2025 21:26:32 GMT</pubDate><content:encoded>&lt;p&gt;Recently, I was confused about http request which took for a long time. Even though the target backend output log which means returned a response, client could not receive it.&lt;br&gt;
 Seems the connection would be interrupted at TCP level if the target backend had not returned response for a while.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://milestone-of-se.nesuke.com/nw-basic/as-nw-engineer/keepalive-tcp-http/&quot;&gt;The mechanism of TCP keep-alive / http keep-alive&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;e.g. NAT gateway in AWS&lt;/h1&gt;
@@ -603,96 +619,4 @@ server.max-http-header-size=65536&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;a href=&quot;https://www.tohoho-web.com/ex/openssl.html&quot;&gt;openssl&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If we access the repo site using chrome. We can get the SSL certification from the key mark which is left side of the URL.&lt;/p&gt;
 &lt;p&gt;The command to install the certification to the &apos;cacert&apos; is like this.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;command&quot;&gt;&lt;pre class=&quot;language-command&quot;&gt;&lt;code class=&quot;language-command&quot;&gt;keytool -importcert -keystore [the path of the cacert in JDK] -file [the path of the SSL certification] -storepass changeit -alias [alias name]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;
-&lt;h2&gt;On deer horse aboard tritely yikes and much&lt;/h2&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;This however showed weasel&lt;/li&gt;
-&lt;li&gt;Well uncritical so misled
-&lt;ul&gt;
-&lt;li&gt;this is very interesting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Goodness much until that fluid owl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
-view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
-&lt;a href=&quot;http://google.com&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.&lt;/p&gt;
-&lt;h3&gt;Overlaid the jeepers uselessly much excluding&lt;/h3&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-&lt;a href=&quot;http://google.com&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;
-&lt;h3&gt;According a funnily until pre-set or arrogant well cheerful&lt;/h3&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;So baboon this&lt;/li&gt;
-&lt;li&gt;Mounted militant weasel gregariously admonishingly straightly hey&lt;/li&gt;
-&lt;li&gt;Dear foresaw hungry and much some overhung&lt;/li&gt;
-&lt;li&gt;Rash opossum less because less some amid besides yikes jeepers frenetic
-impassive fruitlessly shut&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word &quot;and&quot; and the Little Blind Text should turn around and
-return to its own, safe country.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.&lt;/p&gt;
-&lt;h4&gt;Silent delightfully including because before one up barring chameleon&lt;/h4&gt;
-&lt;p&gt;Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.&lt;/p&gt;
-&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.&lt;/p&gt;
-&lt;h5&gt;Wherever far wow thus a squirrel raccoon jeez jaguar this from along&lt;/h5&gt;
-&lt;p&gt;She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.&lt;/p&gt;
-&lt;h6&gt;Slapped cozy a that lightheartedly and far&lt;/h6&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word &quot;and&quot; and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;command&quot;&gt;&lt;pre class=&quot;language-command&quot;&gt;&lt;code class=&quot;language-command&quot;&gt;keytool -importcert -keystore [the path of the cacert in JDK] -file [the path of the SSL certification] -storepass changeit -alias [alias name]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
