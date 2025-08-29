@@ -173,11 +173,7 @@ for (let i = 0; i < n; i++) {
 ```
 
 ### TypeScript
-Now I met errors when submitted code. Let me fix Code Contest app.
-
 ```TypeScript
-// Compile error
-
 const fs = require("fs");
 const input = fs.readFileSync(0, "utf8").trim().split(/\s+/).map(Number);
 
@@ -417,11 +413,7 @@ console.log(out.join(" "));
 ```
 
 ### TypeScript
-Now I met errors when submitted code. Let me fix Code Contest app.
-
 ```TypeScript
-// Compile error
-
 const fs = require("fs");
 const input: number[] = fs.readFileSync(0, "utf8").trim().split(/\s+/).map(Number);
 
@@ -572,10 +564,7 @@ console.log(ans);
 ```
 
 ### TypeScript
-Now I met errors when submitted code. Let me fix Code Contest app.
 ```TypeScript
-// Compile error
-
 const fs = require("fs");
 const raw: string = fs.readFileSync(0, "utf8");
 const s: string = raw.split(/\r?\n/)[0] ?? ""; // keep spaces/symbols
@@ -593,4 +582,60 @@ for (let right = 0; right < s.length; right++) {
 
 console.log(ans);
 
+```
+
+# Fibonacci Number
+[(Timeout test)Fibonacci Number](https://codecontest-frontend.vercel.app/contest/contest_1756125385236_gcy6vb39v/problem/3eccf50d-4b7b-4aa3-be4a-8c7ae7563bb8)
+
+
+### Java (correct answer)
+```Java
+import java.util.*;
+
+public class Main {
+    static long[] memo;
+
+    static long fib(int n) {
+        if (n <= 1) return n;
+
+        if (memo[n] != -1) return memo[n];
+
+        memo[n] = fib(n - 1) + fib(n - 2);
+        return memo[n];
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+
+        memo = new long[n + 1];
+        Arrays.fill(memo, -1);
+
+        long ans = fib(n);
+        System.out.println(ans);
+    }
+}
+```
+
+### Java (TLE)
+```Java
+import java.util.*;
+
+public class Main {
+    static long fib(int n) {
+        if (n <= 1) return n;
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+
+        long ans = fib(n);
+        System.out.println(ans);
+
+    }
+}
 ```
