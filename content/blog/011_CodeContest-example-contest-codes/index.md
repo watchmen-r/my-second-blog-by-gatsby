@@ -639,3 +639,134 @@ public class Main {
     }
 }
 ```
+
+# Capacity To Ship Packages Within D Days
+[(Timeout test)Capacity To Ship Packages Within D Days](https://codecontest-frontend.vercel.app/contest/contest_1756125385236_gcy6vb39v/problem/f52d5f97-af2d-4bfe-89b9-0d90b6389af2)
+
+
+### Java (correct answer)
+```Java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] firstLine = br.readLine().trim().split("\\s+");
+        int n = Integer.parseInt(firstLine[0]);
+        int d = Integer.parseInt(firstLine[1]);
+        
+        int[] weights = Arrays.stream(br.readLine().trim().split("\\s+"))
+                              .mapToInt(Integer::parseInt)
+                              .toArray();
+
+        int lo = Arrays.stream(weights).max().getAsInt();
+        int hi = Arrays.stream(weights).sum();
+
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (canShip(weights, d, mid)) {
+                hi = mid;
+            } else {
+                lo = mid + 1;
+            }
+        }
+        System.out.println(lo);
+    }
+
+    private static boolean canShip(int[] weights, int d, int cap) {
+        int days = 1, curr = 0;
+        for (int w : weights) {
+            if (curr + w > cap) {
+                days++;
+                curr = 0;
+            }
+            curr += w;
+            if (days > d) return false;
+        }
+        return true;
+    }
+}
+```
+
+### Java (TLE)
+```Java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    static int n, d;
+    static int[] weights;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] firstLine = br.readLine().trim().split("\\s+");
+        n = Integer.parseInt(firstLine[0]);
+        d = Integer.parseInt(firstLine[1]);
+
+        weights = Arrays.stream(br.readLine().trim().split("\\s+"))
+                        .mapToInt(Integer::parseInt)
+                        .toArray();
+
+        // Naive DP: try every capacity between max and sum
+        int lo = Arrays.stream(weights).max().getAsInt();
+        int hi = Arrays.stream(weights).sum();
+
+        for (int cap = lo; cap <= hi; cap++) {
+            if (canShip(cap)) {
+                System.out.println(cap);
+                return;
+            }
+        }
+    }
+
+    // Greedy check, but repeated O(sum(weights)) times!
+    private static boolean canShip(int cap) {
+        int days = 1, curr = 0;
+        for (int w : weights) {
+            if (curr + w > cap) {
+                days++;
+                curr = 0;
+            }
+            curr += w;
+            if (days > d) return false;
+        }
+        return true;
+    }
+}
+```
+
+# Longest Common Subsequence
+[(Timeout test)Longest Common Subsequence](https://codecontest-frontend.vercel.app/contest/contest_1756125385236_gcy6vb39v/problem/b9bcfa68-c8ab-4efd-8eea-a3f4499e75d7)
+
+
+### Java (correct answer)
+```Java
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String text1 = br.readLine().trim();
+        String text2 = br.readLine().trim();
+
+        int n = text1.length();
+        int m = text2.length();
+
+        int[][] dp = new int[n + 1][m + 1];
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        System.out.println(dp[n][m]);
+    }
+}
+```
