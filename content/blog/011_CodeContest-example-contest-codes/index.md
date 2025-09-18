@@ -476,6 +476,3 @@ while (heap.size()) {
 console.log(out.join(" "));
 
 ```
-
-# Longest Substring Without Repeating Characters
-[(Example) Longest Substring Without Repeating Characters](https://codecontest-frontend.vercel.app/contest/contest_1756125385236_gcy6vb39v/problem/problem_1756123609715_clcbwfbwu)
